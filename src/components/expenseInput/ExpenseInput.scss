@@ -1,0 +1,83 @@
+@import "src/assets/references/index";
+
+.main-expense-input-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    .title {
+        @include secondary-text-style($font-family, normal, 600, var(--content-table-color));
+        @include responsive-more-size(font-size, 16px, 16px, 14px, 14px);
+    }
+
+    .chip-inputs-div {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        column-gap: 16px;
+        row-gap: 10px;
+        flex-wrap: wrap;
+        .contain-inputs-div {
+            display: flex;
+            align-items: flex-end;
+            column-gap: 6px;
+            @include responsive-more-size(width, 49%, 49%, 100%, 100%);
+
+            .btn-add {
+                @include responsive-more-size(height, 43px, 43px, 37px, 37px);
+                width: 70px;
+                border-radius: 4px;
+                border: 1px solid var(--button-control-table-color);
+                border-radius: 8px;
+                outline: none;
+                background-color: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                padding: 0;
+                .image-btn {
+                    width: 40px;
+                    height: 40px;
+                    padding: 8px;
+                    filter: var(--filter-icon-table);
+                }
+                &:active {
+                    transform: scaleY(0.98) scaleX(0.98);
+                }
+            }
+        }
+
+        .chip-div {
+            display: flex;
+            align-items: center;
+            padding: 6px;
+            background-color: #f1f2f5;
+            border-radius: 6px;
+            column-gap: 6px;
+            @include responsive-more-size(height, 43px, 43px, 37px, 37px);
+            span {
+                @include secondary-text-style("Shabnam", normal, 400, var(--content-table-color));
+                @include responsive-more-size(font-size, 14px, 14px, 12px, 12px);
+                margin-top: 4px;
+            }
+            .button-remove-div {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background-color: var(--content-table-color);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                img {
+                    width: 14px;
+                    height: 14px;
+                    filter: invert(99%) sepia(0%) saturate(2%) hue-rotate(222deg) brightness(108%) contrast(100%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use "sass:selector";
+
+// $main-color: #f1f0f8;
+// $container-table: #d4d4d4;
+// $white-color: #ffff;
+// $black-color: #000;
+// $tr-body-table-background: #c0d7f8;
+// $tr-body-table-skelton: #85b4f6;
+// $content-table-color: #08343d;
+
+// $button-control-table-color: #08343d;
+// $filter-button-control-table: invert(18%) sepia(20%) saturate(1605%) hue-rotate(143deg) brightness(89%) contrast(98%);
+
+// $background-scrollbar: #08343d;
+// $scrollbar-color: #c0d7f8;
+
+//Skeleton Animation
+.skeleton {
+    background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #d6d6d6 33%);
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+    @keyframes shine {
+        to {
+            background-position-x: -200%;
+        }
+    }
+}
+
+//Global Variables
+$width-container: 90%;
+$max-width-container: 1600px;
+$font-family: "Shabnam";

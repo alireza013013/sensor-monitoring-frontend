@@ -1,0 +1,60 @@
+@import "@/assets/references/_index";
+
+.main-create-device-div {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--main-color);
+
+    .container-div {
+        width: $width-container;
+        max-width: $max-width-container;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+        .title-btn-save-div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .title {
+                width: 100%;
+                text-align: start;
+                @include secondary-text-style($font-family, normal, 600, var(--content-table-color));
+                @include responsive-more-size(font-size, 32px, 32px, 24px, 24px);
+            }
+            .btn-form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 120px;
+                height: 30px;
+                border-radius: 6px;
+                border: 2px solid var(--button-control-table-color);
+                background-color: var(--white-color);
+                cursor: pointer;
+                @include secondary-text-style($font-family, normal, 500, var(--content-table-color));
+                @include responsive-more-size(font-size, 16px, 16px, 12px, 12px);
+            }
+            .btn-form:active {
+                transform: scale(1.1);
+            }
+        }
+
+        .row-input {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            @include responsive-more-size(flex-direction, row, row, column, column);
+            column-gap: 24px;
+            row-gap: 12px;
+            margin-top: 12px;
+            .special-input {
+                @include responsive-more-size(max-width, 49%, 49%, 100%, 100%);
+            }
+        }
+    }
+}

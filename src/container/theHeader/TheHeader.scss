@@ -1,0 +1,200 @@
+@import "@/assets/references/_index";
+
+.main-header-div {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--main-color);
+    .container-header {
+        width: $width-container;
+        height: 100%;
+        max-width: $max-width-container;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--container-table);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 0 20px;
+        .logo-name-div {
+            display: flex;
+            align-items: center;
+            @include responsive-more-size(column-gap, 20px, 20px, 10px, 10px);
+            .image-logo {
+                @include responsive-more-size(width, 50px, 50px, 30px, 30px);
+                @include responsive-more-size(height, 50px, 50px, 30px, 30px);
+                filter: var(--filter-icon-table);
+            }
+            .name-app {
+                @include secondary-text-style($font-family, normal, 600, var(--content-table-color));
+                @include responsive-more-size(font-size, 30px, 20px, 18px, 16px);
+            }
+        }
+        .setting-icon-div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 20%;
+            column-gap: 10px;
+            .gear-image {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                filter: var(--filter-icon-table);
+            }
+
+            .menu-setting-div {
+                width: fit-content;
+                height: fit-content;
+                border-radius: 10px;
+                background-color: var(--tr-body-table-background);
+                border: 2px solid var(--button-control-table-color);
+                position: absolute;
+                z-index: 1001;
+                top: 40px;
+                padding: 6px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .router {
+                    width: 100%;
+                    text-align: start;
+                    @include secondary-text-style($font-family, normal, 600, var(--black-color));
+                    @include responsive-more-size(font-size, 20px, 20px, 14px, 14px);
+                    text-decoration: none;
+                    padding: 8px;
+                    white-space: nowrap;
+                }
+                .change-theme-div {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    column-gap: 10px;
+                    .title {
+                        white-space: nowrap;
+                        @include secondary-text-style($font-family, normal, 600, var(--black-color));
+                        @include responsive-more-size(font-size, 20px, 20px, 20px, 20px);
+                    }
+
+                    .div-main-toggle-button {
+                        width: 66px;
+                        height: 30px;
+                        background-color: var(--main-color);
+                        border-radius: 20px;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+
+                        .div-circle-toggle {
+                            min-width: 24px;
+                            min-height: 24px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--container-table);
+                            box-shadow: 0px 3.15943px 3.15943px rgba(0, 0, 0, 0.1);
+                            border-radius: 50%;
+                            margin-left: 4px;
+                            transition: 0.5s;
+                            .xmark-image {
+                                width: 16px;
+                                height: 16px;
+                                filter: var(--filter-icon-table);
+                            }
+                            .check-image {
+                                width: 16px;
+                                height: 16px;
+                                filter: var(--filter-icon-table);
+                            }
+                        }
+
+                        .on {
+                            min-width: 24px;
+                            min-height: 24px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--container-table);
+                            box-shadow: 0px 3.27086px 3.27086px rgba(0, 0, 0, 0.1);
+                            border-radius: 50%;
+                            margin-left: 40px;
+                            transform: rotate(360deg);
+                            transition: 0.5s;
+                        }
+                    }
+                }
+
+                .change-language-div {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin-top: 10px;
+                    .title {
+                        @include secondary-text-style($font-family, normal, 600, var(--black-color));
+                        @include responsive-more-size(font-size, 20px, 20px, 20px, 20px);
+                    }
+
+                    .div-main-toggle-button {
+                        width: 66px;
+                        height: 30px;
+                        background-color: var(--main-color);
+                        border-radius: 20px;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+
+                        .div-circle-toggle {
+                            min-width: 24px;
+                            min-height: 24px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--container-table);
+                            box-shadow: 0px 3.15943px 3.15943px rgba(0, 0, 0, 0.1);
+                            border-radius: 50%;
+                            margin-left: 4px;
+                            transition: 0.5s;
+                            .xmark-image {
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                            }
+                            .check-image {
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .on {
+                            min-width: 24px;
+                            min-height: 24px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--container-table);
+                            box-shadow: 0px 3.27086px 3.27086px rgba(0, 0, 0, 0.1);
+                            border-radius: 50%;
+                            margin-left: 40px;
+                            transform: rotate(360deg);
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+            .top-show-enter-active,
+            .top-show-leave-active {
+                transition: transform 0.5s ease;
+            }
+
+            .top-show-enter-from,
+            .top-show-leave-to {
+                transform: translateY(-200px);
+            }
+        }
+    }
+}

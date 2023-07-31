@@ -1,0 +1,289 @@
+@import "@/assets/references/_index";
+
+.main-sensor-list-div {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--main-color);
+
+    .container-div {
+        width: $width-container;
+        max-width: $max-width-container;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+        .table-sensor-div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .top-of-table-div {
+                width: 100%;
+                @include responsive-more-size(height, 100px, 80px, 70px, 80px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                background-color: var(--container-table);
+
+                .container-top-table-div {
+                    width: 96%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    .cotain-button-extra-option-div {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 10px;
+                        column-gap: 6px;
+                        .icon-search-div {
+                            @include responsive-more-size(min-width, 44px, 34px, 34px, 34px);
+                            @include responsive-more-size(height, 44px, 34px, 34px, 34px);
+                            border-radius: 10px;
+                            border: 2px solid var(--button-control-table-color);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .search-close-image {
+                                @include responsive-more-size(width, 24px, 18px, 18px, 16px);
+                                @include responsive-more-size(height, 24px, 18px, 18px, 16px);
+                                filter: var(--filter-button-control-table);
+                                transition: 0.5s;
+                                cursor: pointer;
+                            }
+
+                            .input-search {
+                                background-color: transparent;
+                                width: 0;
+                                height: 0;
+                                border-radius: 10px;
+                                border: none;
+                                transition: 0.5s;
+                            }
+
+                            .input-search:focus {
+                                outline: none !important;
+                                border: none;
+                            }
+
+                            .input-search::placeholder {
+                                @include secondary-text-style($font-family, normal, 600, var(--black-color));
+                                @include responsive-more-size(font-size, 20px, 20px, 16px, 12px);
+                                @include responsive-more-size(line-height, 30px, 30px, 24px, 20px);
+                            }
+
+                            input[type="text"] {
+                                border: none;
+                                @include secondary-text-style($font-family, normal, 600, var(--black-color));
+                                @include responsive-more-size(font-size, 20px, 20px, 16px, 12px);
+                                @include responsive-more-size(line-height, 30px, 30px, 24px, 20px);
+                            }
+
+                            .open-input-search {
+                                padding: 0 10px;
+                                @include responsive-more-size(width, 300px, 250px, 200px, 150px);
+                                @include responsive-more-size(height, 36px, 26px, 26px, 26px);
+                            }
+                        }
+                        .extra-option-table-button {
+                            @include responsive-more-size(min-width, 44px, 34px, 34px, 34px);
+                            @include responsive-more-size(height, 44px, 34px, 34px, 34px);
+                            border-radius: 10px;
+                            border: 2px solid var(--button-control-table-color);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            background-color: transparent;
+                            .image-button-extra {
+                                @include responsive-more-size(width, 24px, 18px, 18px, 16px);
+                                @include responsive-more-size(height, 24px, 18px, 18px, 16px);
+                                filter: var(--filter-button-control-table);
+                            }
+                        }
+                        .extra-option-table-button:active {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .text-count-sensor {
+                        @include secondary-text-style($font-family, normal, 600, var(--content-table-color));
+                        @include responsive-more-size(font-size, 24px, 20px, 18px, 12px);
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .main-table-div {
+                width: 100%;
+                @include responsive-more-size(overflow-x, hidden, hidden, scroll, scroll);
+                padding: 30px 0;
+                background-color: var(--white-color);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .scroll-table-div {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    @include responsive-more-size(min-width, unset, unset, 900px, 900px);
+                    .table {
+                        width: 96%;
+                        border-collapse: separate;
+                        border-spacing: 0 6px;
+
+                        .title-header-table {
+                            @include secondary-text-style($font-family, normal, 800, var(--black-color));
+                            @include responsive-more-size(font-size, 20px, 16px, 18px, 18px);
+                        }
+                        .tr-body-table {
+                            width: 100%;
+                            height: 70px;
+                            background-color: var(--tr-body-table-background);
+                            margin-bottom: 6px;
+                            .td-body-table {
+                                text-align: center;
+                                @include secondary-text-style($font-family, normal, 600, var(--content-table-color));
+                                @include responsive-more-size(font-size, 18px, 16px, 16px, 16px);
+                                .eye-icon {
+                                    width: 24px;
+                                    height: 24px;
+                                    cursor: pointer;
+                                    filter: var(--filter-icon-table);
+                                }
+                            }
+                            // .td-body-table:first-child {
+                            //     border-top-left-radius: 10px;
+                            //     border-bottom-left-radius: 10px;
+                            // }
+                            // .td-body-table:last-child {
+                            //     border-top-right-radius: 10px;
+                            //     border-bottom-right-radius: 10px;
+                            // }
+                        }
+
+                        .tr-body-skeleton {
+                            width: 100%;
+                            height: 70px;
+                            background-color: var(--tr-body-table-skelton);
+                            margin-bottom: 6px;
+                            .td-body-skeleton {
+                                text-align: center;
+                                .skeleton-div {
+                                    @extend .skeleton;
+                                    width: 80px;
+                                    height: 30px;
+                                    border-radius: 4px;
+                                    margin: auto;
+                                }
+                            }
+                            .td-body-skeleton:first-child {
+                                border-top-left-radius: 10px;
+                                border-bottom-left-radius: 10px;
+                            }
+                            .td-body-skeleton:last-child {
+                                border-top-right-radius: 10px;
+                                border-bottom-right-radius: 10px;
+                            }
+                        }
+                    }
+                }
+                .contain-no-item-div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    .box-image {
+                        @include responsive-more-size(width, 200px, 180px, 140px, 100px);
+                        filter: var(--filter-icon-table);
+                    }
+                    .text-no-item {
+                        @include secondary-text-style($font-family, normal, 800, var(--black-color));
+                        @include responsive-more-size(font-size, 20px, 18px, 16px, 16px);
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+            .main-table-div::-webkit-scrollbar {
+                width: 80%;
+                height: 14px;
+            }
+
+            /* Track */
+            .main-table-div::-webkit-scrollbar-track {
+                background: transparent;
+                border: 0.4px solid var(--background-scrollbar);
+                border-radius: 8px;
+            }
+
+            /* Handle */
+            .main-table-div::-webkit-scrollbar-thumb {
+                background: var(--scrollbar-color);
+                border: 0.4px solid var(--background-scrollbar);
+                border-radius: 8px;
+            }
+
+            /* Handle on hover */
+            .main-table-div::-webkit-scrollbar-thumb:hover {
+                background: Var(--scrollbar-color);
+            }
+            .bottom-of-table-div {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background-color: var(--container-table);
+
+                .button-pagination-div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 2px solid var(--button-control-table-color);
+                    background-color: var(--white-color);
+                    cursor: pointer;
+                    .arrow-icon {
+                        width: 20px;
+                        height: 20px;
+                        filter: var(--filter-button-control-table);
+                    }
+                }
+                .button-pagination-div:active {
+                    transform: scale(1.1);
+                }
+
+                .number-page-table {
+                    @include secondary-text-style($font-family, normal, 800, var(--black-color));
+                    @include responsive-more-size(font-size, 20px, 18px, 16px, 16px);
+                    margin: 4px 16px 0 16px;
+                }
+                .rtl-span {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    column-gap: 4px;
+                }
+
+                .disable-btn {
+                    opacity: 0.5;
+                }
+                .disable-btn:active {
+                    transform: scale(1);
+                }
+            }
+            .rtl-div {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
